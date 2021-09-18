@@ -4,9 +4,8 @@ import styled from "styled-components";
 import { capitalize } from "../../../util/strings";
 import RankingHeadText from "../atoms/RankingHeadText";
 
-const TextRows = styled.tr`
-  border: 1px solid #444444;
-`;
+const TextRows = styled.tr``;
+
 const RankingHead: React.FC<{ criteria: string }> = (props) => {
   const headText: string[] = [
     "   ",

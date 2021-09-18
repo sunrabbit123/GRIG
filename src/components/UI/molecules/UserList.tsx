@@ -5,9 +5,8 @@ import { UserRanking } from "../../../type/user";
 import RankingComponent from "../atoms/RankingComponent";
 import RankingProfile from "../atoms/RankingProfile";
 const UserBlock = styled.tbody``;
-const User = styled.tr`
-  display: block;
-`;
+const User = styled.tr``;
+
 const UserList: React.FC<UserRanking> = (props) => {
   const users = props.rankings;
   console.log(users);
