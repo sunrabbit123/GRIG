@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { UserInform, UserRankingCriteria } from "../../../type/user";
 import { getUserInformAtGraphQL } from "../../../util/ranking";
@@ -7,6 +7,7 @@ import RankingHead from "../molecules/RankingHead";
 import UserList from "../molecules/UserList";
 
 const MainContent = styled.main`
+  max-width : 100rem;
   width: 100%;
   display: flex;
   margin: 0 auto;
@@ -14,31 +15,40 @@ const MainContent = styled.main`
 `;
 const RankingCriteriaListContainer = styled.nav`
   display: block;
-  width: 20%;
-  margin-left: 5%;
+  margin-top : 4rem;
+  width: 10%;
 `;
 
 const RankingContent = styled.section`
   display: block;
-  width: 79%;
+  width: 80%;
   margin: 0 auto;
 `;
 
-const RankingTable = styled.table``;
+const RankingTable = styled.table`
+  text-align:left;
+`;
 
 const RankingList: React.FC = () => {
-  const [ranking, setRanking] = useState<UserInform[]>([]);
-
   const [criteria, setCriteria] = useState<UserRankingCriteria>(
     UserRankingCriteria.contributions
   );
+  const [ranking, setRanking] = useState<UserInform[]>([]);
 
   const onClickCriteria = (criterias: UserRankingCriteria) => {
     setCriteria(criterias);
+   
+  }
+  const updateRanking = (criterias : UserRankingCriteria) => {
     getUserInformAtGraphQL(criterias).then((res: UserInform[]) => {
       setRanking(res);
     });
   };
+  
+  useEffect(() => {
+    updateRanking(criteria);
+  }, [criteria]);
+
   return (
     <MainContent>
       <RankingCriteriaListContainer>

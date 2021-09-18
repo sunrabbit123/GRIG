@@ -3,7 +3,7 @@ import { capitalize } from "../../../util/strings";
 
 const NavCriteriaA = styled.a`
   display: block;
-  margin: 10%;
+  margin : 0rem 0rem 4rem 0rem;
 `;
 
 const CriteriaA: React.FC<{ text: string; onClickEvent: Function }> = (
