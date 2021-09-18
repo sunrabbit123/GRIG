@@ -5,7 +5,7 @@ const RankingProfileContainer = styled.td`
   padding: 1.2rem 1.5rem 1.2rem 1rem;
 `;
 const RankingProfileTag = styled.img`
-  border-radius: 100%;
+  border-radius: 50%;
   height : 100px;
   width : 100px;
 `;

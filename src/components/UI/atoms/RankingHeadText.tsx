@@ -1,14 +1,23 @@
 import styled from "styled-components";
 
-const RankingHeadTexts = styled.th`
-  border-bottom: 0.1rem solid #e1e1e1;
-  padding: 1.2rem 1.5rem 1.2rem 1rem;
+const RankingHeadTexts = styled.th<{text : string }>`
+  padding: 1.2rem 2rem 1.2rem 1rem;
+  text-align : ${(props : any) => props.text == 'Profile' ? 'center' : 'left'}
 `;
 
-const RankingHeadText: React.FC<{ text: string | number }> = (props) => {
+
+const RankingHeadInnerText = styled.span`
+  border-bottom: 0.1rem solid #DB7770;
+`;
+
+const RankingHeadText: React.FC<{ text: string }> = (props) => {
   return (
     <>
-      <RankingHeadTexts>{props.text}</RankingHeadTexts>
+      <RankingHeadTexts text={props.text}>
+        <RankingHeadInnerText>
+          {props.text}
+        </RankingHeadInnerText>
+      </RankingHeadTexts>
     </>
   );
 };

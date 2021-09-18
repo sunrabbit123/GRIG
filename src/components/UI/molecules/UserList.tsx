@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { UserRanking } from "../../../type/user";
+import NameComponent from "../atoms/NameComponent";
 import RankingComponent from "../atoms/RankingComponent";
 import RankingProfile from "../atoms/RankingProfile";
 
@@ -17,7 +18,7 @@ const UserList: React.FC<UserRanking> = (props) => {
       {users.map((user, idx) => (
         <User>
           <RankingComponent content={idx + 1} />
-          <RankingComponent content={`${user.name}(${user.nickname})`} />
+          <NameComponent name={`${user.name}(${user.nickname})`} generation={user.generation}/>
           <RankingComponent content={user[props.criteria]}/>
           <RankingProfile link={user.profile_img} />
           <RankingComponent content={user.bio} />

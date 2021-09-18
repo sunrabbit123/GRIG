@@ -1,21 +1,29 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+
 import { UserInform, UserRankingCriteria } from "../../../type/user";
 import { getUserInformAtGraphQL } from "../../../util/ranking";
 import RankingCriteriaList from "../molecules/RankingCriteriaList";
 import RankingHead from "../molecules/RankingHead";
 import UserList from "../molecules/UserList";
 
+import "../../../font/SeoulHangangM.css";
+
 const MainContent = styled.main`
-  max-width : 100rem;
+  font-family : SeoulHangangM;
+
+  max-width : 80rem;
   width: 100%;
   display: flex;
   margin: 0 auto;
   padding-top: 30px;
+
+  font-size : 1.2em;
 `;
 const RankingCriteriaListContainer = styled.nav`
-  display: block;
+  display: fixed;
   margin-top : 4rem;
+  height: 525px;
   width: 10%;
 `;
 
