@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { UserRanking } from "../../../type/user";
+import DescriptionContent from "../atoms/DescriptionContent";
 import NameComponent from "../atoms/NameComponent";
 import RankingComponent from "../atoms/RankingComponent";
 import RankingProfile from "../atoms/RankingProfile";
@@ -21,7 +22,7 @@ const UserList: React.FC<UserRanking> = (props) => {
           <NameComponent name={`${user.name}(${user.nickname})`} generation={user.generation}/>
           <RankingComponent content={user[props.criteria]}/>
           <RankingProfile link={user.profile_img} />
-          <RankingComponent content={user.bio} />
+          <DescriptionContent bio={user.bio} public_repos={user.public_repos}/>
         </User>
       ))}
     </UserBlock>

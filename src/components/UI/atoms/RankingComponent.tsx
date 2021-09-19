@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const RankingComponents = styled.td`
-border-bottom: 0.1rem solid #e1e1e1;
-padding: 1.2rem 1.4rem 1.2rem 1rem;
+  border-bottom: 0.1rem solid #e1e1e1;
+  padding: 1.2rem 1.4rem 1.2rem 1rem;
 `;
 
 const RankingComponent: React.FC<{ content: number | string | undefined }> = (props) => {
