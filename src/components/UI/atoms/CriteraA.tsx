@@ -7,14 +7,10 @@ const NavCriteriaA = styled.a<{selected : string, text : string}>`
   margin : 0rem 0rem 4rem 0rem;
   cursor : pointer;
   &:hover {
-    text-decoration: underline;
-    text-underline-position:under;
-    text-decoration-color : #DB7770;
+    font-weight: 600;
   }
   ${(props : any) => props.selected !== props.text ? css`` : css`
-    text-decoration: underline;
-    text-underline-position:under;
-    text-decoration-color : #DB7770;
+    font-weight: 600;
   `}
 `;
 
