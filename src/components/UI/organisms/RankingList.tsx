@@ -12,7 +12,7 @@ import "../../../font/SeoulHangangM.css";
 const MainContent = styled.main`
   font-family : SeoulHangangM;
 
-  max-width : 80rem;
+  max-width : 80em;
   width: 100%;
   display: flex;
   margin: 0 auto;
@@ -22,15 +22,18 @@ const MainContent = styled.main`
 `; // 추후 글로벌 컴포넌트로 빼기
 
 const RankingCriteriaListContainer = styled.nav`
-  display: fixed;
+  display: block;
+  position: fixed;
   margin-top : 4rem;
+  padding-left: 4rem;
   height: 525px;
-  width: 10%;
+  width: 10em;
 `;
 
 const RankingContent = styled.section`
   display: block;
   width: 80%;
+  padding-left: 20%;
   margin: 0 auto;
 `;
 

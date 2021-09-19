@@ -3,8 +3,9 @@ import { capitalize } from "../../../util/strings";
 
 const NavCriteriaA = styled.a<{selected : string, text : string}>`
   display: block;
+  width: 8em;
   position: relative;
-  margin : 0rem 0rem 4rem 0rem;
+  margin : 0 0 4rem 0;
   cursor : pointer;
   &:hover {
     font-weight: 600;
