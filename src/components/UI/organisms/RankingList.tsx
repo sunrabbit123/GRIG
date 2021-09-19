@@ -25,7 +25,6 @@ const RankingCriteriaListContainer = styled.nav`
   display: block;
   position: fixed;
   margin-top : 4rem;
-  padding-left: 4rem;
   height: 525px;
   width: 10em;
 `;
