@@ -19,7 +19,8 @@ const MainContent = styled.main`
   padding-top: 30px;
 
   font-size : 1.2em;
-`;
+`; // 추후 글로벌 컴포넌트로 빼기
+
 const RankingCriteriaListContainer = styled.nav`
   display: fixed;
   margin-top : 4rem;
@@ -60,7 +61,7 @@ const RankingList: React.FC = () => {
   return (
     <MainContent>
       <RankingCriteriaListContainer>
-        <RankingCriteriaList onClickEvent={onClickCriteria} />
+        <RankingCriteriaList onClickEvent={onClickCriteria} selected={criteria}/>
       </RankingCriteriaListContainer>
       <RankingContent>
         <RankingTable>

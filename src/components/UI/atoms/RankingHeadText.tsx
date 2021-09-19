@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const RankingHeadTexts = styled.th<{text : string }>`
   padding: 1.2rem 2rem 1.2rem 1rem;
-  text-align : ${(props : any) => props.text == 'Profile' ? 'center' : 'left'}
+  text-align : ${(props : any) => props.text === 'Profile' ? 'center' : 'left'}
 `;
 
 
 const RankingHeadInnerText = styled.span`
-  border-bottom: 0.1rem solid #DB7770;
+  font-size: 1.15em;
 `;
 
 const RankingHeadText: React.FC<{ text: string }> = (props) => {

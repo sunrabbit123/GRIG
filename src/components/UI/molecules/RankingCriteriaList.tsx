@@ -14,15 +14,15 @@ const RankingCriteriaListRightLine = styled.div`
   background-color : #DB7770;
   color : #DB7770;
   border-radius : 30px;
-  padding-bottom : 540px;
+  padding-bottom : 650px;
 `;
 
-const RankingCriteriaList: React.FC<{ onClickEvent: Function }> = (props) => {
+const RankingCriteriaList: React.FC<{ onClickEvent: Function, selected: string }> = (props) => {
   return (
     <>
       <RankingCriteriaListContainer>
-        {React.Children.map(UserRankingCriteriaList, (criteria) => (
-          <CriteraA text={criteria} onClickEvent={props.onClickEvent}></CriteraA>
+        {React.Children.map(UserRankingCriteriaList, (criteria) => ( 
+          <CriteraA text={criteria} onClickEvent={props.onClickEvent} selected={props.selected}></CriteraA>
         ))}
       </RankingCriteriaListContainer>
       <RankingCriteriaListRightLine >1</RankingCriteriaListRightLine>
