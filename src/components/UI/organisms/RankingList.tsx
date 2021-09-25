@@ -10,21 +10,22 @@ import UserList from "../molecules/UserList";
 import "../../../font/SeoulHangangM.css";
 
 const MainContent = styled.main`
-  font-family : SeoulHangangM;
+  font-family: SeoulHangangM;
 
-  max-width : 80em;
+  max-width: 80em;
   width: 100%;
   display: flex;
   margin: 0 auto;
   padding-top: 30px;
 
-  font-size : 1.2em;
+  font-size: 1.2em;
 `; // 추후 글로벌 컴포넌트로 빼기
 
 const RankingCriteriaListContainer = styled.nav`
   display: block;
-  position: fixed;
-  margin-top : 4rem;
+  position: sticky;
+  top: 100px;
+  margin-top: 4rem;
   height: 525px;
   width: 10em;
 `;
@@ -32,12 +33,12 @@ const RankingCriteriaListContainer = styled.nav`
 const RankingContent = styled.section`
   display: block;
   width: 80%;
-  padding-left: 20%;
+  padding-left: 3em;
   margin: 0 auto;
 `;
 
 const RankingTable = styled.table`
-  text-align:left;
+  text-align: left;
 `;
 
 const RankingList: React.FC = () => {
@@ -48,14 +49,13 @@ const RankingList: React.FC = () => {
 
   const onClickCriteria = (criterias: UserRankingCriteria) => {
     setCriteria(criterias);
-   
-  }
-  const updateRanking = (criterias : UserRankingCriteria) => {
+  };
+  const updateRanking = (criterias: UserRankingCriteria) => {
     getUserInformAtGraphQL(criterias).then((res: UserInform[]) => {
       setRanking(res);
     });
   };
-  
+
   useEffect(() => {
     updateRanking(criteria);
   }, [criteria]);
@@ -63,7 +63,10 @@ const RankingList: React.FC = () => {
   return (
     <MainContent>
       <RankingCriteriaListContainer>
-        <RankingCriteriaList onClickEvent={onClickCriteria} selected={criteria}/>
+        <RankingCriteriaList
+          onClickEvent={onClickCriteria}
+          selected={criteria}
+        />
       </RankingCriteriaListContainer>
       <RankingContent>
         <RankingTable>
