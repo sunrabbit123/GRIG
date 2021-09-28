@@ -17,6 +17,7 @@ export const getUserInformAtGraphQL: Function = async (
       criteria: getUserInformCriteria(criteria),
     },
   });
-  console.log(result.data);
-  return result.data.data.ranking;
+  return result.data.data.ranking.sort((a: any, b: any) =>
+    a[criteria] < b[criteria] ? 1 : -1
+  );
 };

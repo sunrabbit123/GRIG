@@ -12,7 +12,7 @@ query getUserRankingQuery($rankingCriteria: String, $rankingCount: Int, $ranking
     bio
     public_repos
     avatar_url
-    
+
     ${criteria}
   }
 }
@@ -23,7 +23,7 @@ export const getUserInformCriteria: Function = (
 ): GraphQLVariables => {
   return {
     rankingCriteria: criteria,
-    rankingCount: 10,
+    rankingCount: 100,
     rankingPage: 1,
   };
 };
