@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { UserInform, UserRankingCriteria } from "../../../type/user";
+import {
+  UserInform,
+  UserRankingCriteria,
+  UserRankingCriteriaType,
+} from "../../../type/user";
 import { getUserInformAtGraphQL } from "../../../util/ranking";
 import RankingCriteriaList from "../molecules/RankingCriteriaList";
 import RankingHead from "../molecules/RankingHead";
@@ -42,15 +46,15 @@ const RankingTable = styled.table`
 `;
 
 const RankingList: React.FC = () => {
-  const [criteria, setCriteria] = useState<UserRankingCriteria>(
+  const [criteria, setCriteria] = useState<UserRankingCriteriaType>(
     UserRankingCriteria.contributions
   );
   const [ranking, setRanking] = useState<UserInform[]>([]);
 
-  const onClickCriteria = (criterias: UserRankingCriteria) => {
+  const onClickCriteria = (criterias: UserRankingCriteriaType) => {
     setCriteria(criterias);
   };
-  const updateRanking = (criterias: UserRankingCriteria) => {
+  const updateRanking = (criterias: UserRankingCriteriaType) => {
     getUserInformAtGraphQL(criterias).then((res: UserInform[]) => {
       setRanking(res);
     });

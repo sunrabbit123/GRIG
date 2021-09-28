@@ -25,7 +25,7 @@ export interface UserInform {
 
 export interface UserRanking {
   rankings: UserInform[];
-  criteria: UserRankingCriteria;
+  criteria: UserRankingCriteriaType;
 }
 export const UserRankingCriteria = {
   stared: "stared",
@@ -37,7 +37,7 @@ export const UserRankingCriteria = {
   pullRequests: "pullRequests",
 } as const;
 
-export type UserRankingCriteria =
+export type UserRankingCriteriaType =
   typeof UserRankingCriteria[keyof typeof UserRankingCriteria];
 
 export const UserRankingCriteriaList: string[] = [

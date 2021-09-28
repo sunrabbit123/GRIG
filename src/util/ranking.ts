@@ -1,4 +1,4 @@
-import { UserInform, UserRankingCriteria } from "../type/user";
+import { UserInform, UserRankingCriteriaType } from "../type/user";
 import axios, { AxiosResponse } from "axios";
 import {
   getGraphQLRankingQuery,
@@ -7,7 +7,7 @@ import {
 } from "../config/ranking";
 
 export const getUserInformAtGraphQL: Function = async (
-  criteria: UserRankingCriteria
+  criteria: UserRankingCriteriaType
 ): Promise<UserInform[]> => {
   const result: AxiosResponse = await axios({
     method: "POST",
