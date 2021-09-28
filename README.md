@@ -1,5 +1,6 @@
 # GRIG
 
+[![Update](https://github.com/sunrabbit123/GRIG/actions/workflows/main.yml/badge.svg)](https://github.com/sunrabbit123/GRIG/actions/workflows/main.yml)
 > https://sunrabbit123.github.io/GRIG/
 
 ✨GSM을 졸업한, 그리고 재학중인 사람들의 깃헙 랭킹을 표시하며 매일매일 새로 정보가 업데이트 됩니다.✨
