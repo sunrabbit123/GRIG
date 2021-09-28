@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "react-scripts build",
+    "build": "react-scripts build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
