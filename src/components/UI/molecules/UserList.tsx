@@ -22,6 +22,7 @@ const UserList: React.FC<UserRanking> = (props) => {
           <NameComponent
             name={`${user.name}(${user.nickname})`}
             generation={user.generation}
+            link={`https://github.com/${user.nickname}`}
           />
           <RankingComponent content={user[props.criteria]} />
           <RankingProfile link={user.avatar_url} />
