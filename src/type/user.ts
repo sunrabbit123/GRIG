@@ -12,7 +12,7 @@ export interface UserInform {
   generation: number;
   public_repos: number;
   bio: string;
-  profile_img: string;
+  avatar_url: string;
 
   stared?: number;
   contributions?: number;

@@ -9,7 +9,7 @@ import RankingProfile from "../atoms/RankingProfile";
 
 const UserBlock = styled.tbody``;
 const User = styled.tr`
-  padding : 1.4rem 0rem 1.4rem 0rem
+  padding: 1.4rem 0rem 1.4rem 0rem;
 `;
 
 const UserList: React.FC<UserRanking> = (props) => {
@@ -19,10 +19,13 @@ const UserList: React.FC<UserRanking> = (props) => {
       {users.map((user, idx) => (
         <User>
           <RankingComponent content={idx + 1} />
-          <NameComponent name={`${user.name}(${user.nickname})`} generation={user.generation}/>
-          <RankingComponent content={user[props.criteria]}/>
-          <RankingProfile link={user.profile_img} />
-          <DescriptionContent bio={user.bio} public_repos={user.public_repos}/>
+          <NameComponent
+            name={`${user.name}(${user.nickname})`}
+            generation={user.generation}
+          />
+          <RankingComponent content={user[props.criteria]} />
+          <RankingProfile link={user.avatar_url} />
+          <DescriptionContent bio={user.bio} public_repos={user.public_repos} />
         </User>
       ))}
     </UserBlock>

@@ -11,7 +11,8 @@ query getUserRankingQuery($rankingCriteria: String, $rankingCount: Int, $ranking
     nickname
     bio
     public_repos
-
+    avatar_url
+    
     ${criteria}
   }
 }
