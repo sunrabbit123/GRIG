@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { mainTitle } from "../../../config/messages";
 
 const TitleMessage = styled.h1`
-  margin : 0;
-  font-size : 2.5em;  
+  margin: 0;
+  font-size: 2.3em;
 `;
 
 const HeaderTitle: React.FC = () => {

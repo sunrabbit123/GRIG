@@ -16,13 +16,13 @@ import "../../../font/SeoulHangangM.css";
 const MainContent = styled.main`
   font-family: SeoulHangangM;
 
-  max-width: 80em;
+  max-width: 75em;
   width: 100%;
   display: flex;
   margin: 0 auto;
   padding-top: 30px;
-
-  font-size: 1.2em;
+  margin-left: 15em;
+  font-size: 1.08em;
 `; // 추후 글로벌 컴포넌트로 빼기
 
 const RankingCriteriaListContainer = styled.nav`
