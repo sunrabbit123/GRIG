@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {  subTitle } from "../../../config/messages";
+import { subTitle } from "../../../config/messages";
 const SubTitleMessage = styled.h2`
-    margin: 0;
-    font-size : 1.5em;
+  margin: 0;
+  font-size: 1.2em;
 `;
 const HeaderTitle: React.FC = () => {
   return (
