@@ -1,7 +1,7 @@
 import { GraphQLVariables } from "../type/user";
 
-export const getRankingApiUrl: string = "http://localhost:3000/api/graphql";
-//"https://d6ui2fy5uj.execute-api.ap-northeast-2.amazonaws.com/api/graphql";
+export const getRankingApiUrl: string =
+  "https://d6ui2fy5uj.execute-api.ap-northeast-2.amazonaws.com/api/graphql";
 
 export const getGraphQLRankingQuery: Function = (criteria: string) => `
 query getUserRankingQuery($rankingCriteria: String, $rankingPage: Int, $rankingCount: Int, $generation: Int) {
