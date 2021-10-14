@@ -14,7 +14,7 @@ export const getUserInformAtGraphQL: Function = async (
     url: getRankingApiUrl,
     data: {
       query: getGraphQLRankingQuery(criteria),
-      criteria: getUserInformCriteria(criteria),
+      variables: getUserInformCriteria(criteria),
     },
   });
   return result.data.data.ranking.sort((a: any, b: any) =>
