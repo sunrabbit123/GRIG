@@ -19,13 +19,14 @@ query getUserRankingQuery($rankingCriteria: String, $rankingPage: Int, $rankingC
 `;
 
 export const getUserInformCriteria: Function = (
-  criteria: string
+  criteria: string,
+  generation: number
 ): GraphQLVariables => {
   return {
     rankingCriteria: criteria,
     rankingCount: 100,
     rankingPage: 1,
-    generation: 0,
+    generation,
   };
 };
 
