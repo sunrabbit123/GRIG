@@ -28,3 +28,12 @@ export const getUserInformCriteria: Function = (
     generation: 0,
   };
 };
+
+export const getGraphQLGenerationQuery: Function = () => `
+query getGenerationListQuery{
+  generations{
+    _id
+    count
+  }
+}
+`;
