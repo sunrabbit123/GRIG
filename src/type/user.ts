@@ -49,3 +49,8 @@ export const UserRankingCriteriaList: string[] = [
   "issues",
   "pullRequests",
 ];
+
+export interface GenerationsListAndCount {
+  _id: number;
+  count: number;
+}
