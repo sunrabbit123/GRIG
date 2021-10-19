@@ -3,7 +3,7 @@ import { mainTitle } from "../../../config/messages";
 
 const TitleMessage = styled.h1`
   margin: 0;
-  font-size: 2.3em;
+  font-size: 2.1em;
 `;
 
 const HeaderTitle: React.FC = () => {

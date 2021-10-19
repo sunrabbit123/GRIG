@@ -22,7 +22,7 @@ const MainContent = styled.main`
   display: flex;
   margin: 0 auto;
   padding-top: 30px;
-  margin-left: 10em;
+  margin-left: 8em;
   font-size: 1.08em;
 `; // 추후 글로벌 컴포넌트로 빼기
 
