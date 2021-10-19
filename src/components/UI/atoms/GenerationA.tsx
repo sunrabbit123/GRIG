@@ -32,7 +32,7 @@ const GenerationA: React.FC<{
       >
         {props.generationInform._id !== 0
           ? `${props.generationInform._id}기 (${props.generationInform.count}명)`
-          : `전체 보기`}
+          : `전체 기수`}
       </NavGenerationA>
     </>
   );

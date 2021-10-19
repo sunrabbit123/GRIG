@@ -23,7 +23,7 @@ export const getUserInformAtGraphQL: Function = async (
       variables: getUserInformCriteria(criteria, generationValue),
     },
   });
-  if (!result.data.data) {
+  if (!result.data.data.ranking) {
     return [];
   }
   return result.data.data.ranking.sort((a: any, b: any) =>

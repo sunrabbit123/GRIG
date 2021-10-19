@@ -14,7 +14,7 @@ const Description = styled.p`
 
   display: block;
   width: 70%;
-  padding-left: 25%;
+  padding-left: 30%;
   margin: 0 auto;
 
   color: #777777;
