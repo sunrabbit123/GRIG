@@ -4,25 +4,36 @@ import styled from "styled-components";
 import { UserRankingCriteriaList } from "../../../type/user";
 import CriteraA from "../atoms/CriteraA";
 
-
-const RankingCriteriaListRightLine = styled.div`
-  position: absolute;
-  right 0;
-  top : -1em;
-  background-color : #DB7770;
-  color : #DB7770;
-  width: 20px;
-  border-radius : 30px;
-  padding-bottom : 35rem;
+const RankingCriteriaListBlock = styled.ul`
+  display: inline-block;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  right: 0;
+`;
+const RankingCriteria = styled.li`
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
 `;
 
-const RankingCriteriaList: React.FC<{ onClickEvent: Function, selected: string }> = (props) => {
+const RankingCriteriaList: React.FC<{
+  onClickEvent: Function;
+  selected: string;
+}> = (props) => {
   return (
     <>
-      {React.Children.map(UserRankingCriteriaList, (criteria) => ( 
-        <CriteraA text={criteria} onClickEvent={props.onClickEvent} selected={props.selected}></CriteraA>
-      ))}
-      <RankingCriteriaListRightLine ></RankingCriteriaListRightLine>
+      <RankingCriteriaListBlock>
+        {React.Children.map(UserRankingCriteriaList, (criteria) => (
+          <RankingCriteria>
+            <CriteraA
+              text={criteria}
+              onClickEvent={props.onClickEvent}
+              selected={props.selected}
+            ></CriteraA>
+          </RankingCriteria>
+        ))}
+      </RankingCriteriaListBlock>
     </>
   );
 };

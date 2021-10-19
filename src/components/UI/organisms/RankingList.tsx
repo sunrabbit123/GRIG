@@ -12,6 +12,7 @@ import RankingHead from "../molecules/RankingHead";
 import UserList from "../molecules/UserList";
 
 import "../../../font/SeoulHangangM.css";
+import RankingKindOfGeneration from "../molecules/RankingKindOfGeneration";
 
 const MainContent = styled.main`
   font-family: SeoulHangangM;
@@ -21,17 +22,17 @@ const MainContent = styled.main`
   display: flex;
   margin: 0 auto;
   padding-top: 30px;
-  margin-left: 15em;
+  margin-left: 10em;
   font-size: 1.08em;
 `; // 추후 글로벌 컴포넌트로 빼기
 
 const RankingCriteriaListContainer = styled.nav`
-  display: block;
   position: sticky;
+  display: flex;
   top: 100px;
   margin-top: 4rem;
   height: 525px;
-  width: 10em;
+  width: 20em;
 `;
 
 const RankingContent = styled.section`
@@ -45,32 +46,57 @@ const RankingTable = styled.table`
   text-align: left;
 `;
 
+const RankingCriteriaListRightLine = styled.div`
+  position: absolute;
+  right 0;
+  top : -1em;
+  background-color : #DB7770;
+  color : #DB7770;
+  width: 20px;
+  border-radius : 30px;
+  padding-bottom : 35rem;
+`;
+
 const RankingList: React.FC = () => {
   const [criteria, setCriteria] = useState<UserRankingCriteriaType>(
     UserRankingCriteria.contributions
   );
+  const [generationStatus, setGeneration] = useState<number>(0);
   const [ranking, setRanking] = useState<UserInform[]>([]);
 
   const onClickCriteria = (criterias: UserRankingCriteriaType) => {
     setCriteria(criterias);
   };
-  const updateRanking = (criterias: UserRankingCriteriaType) => {
-    getUserInformAtGraphQL(criterias).then((res: UserInform[]) => {
-      setRanking(res);
-    });
+  const onClickGeneration = (generations: number) => {
+    setGeneration(generations);
+  };
+  const updateRanking = (
+    criterias: UserRankingCriteriaType,
+    generationValue: number
+  ) => {
+    getUserInformAtGraphQL(criterias, generationValue).then(
+      (res: UserInform[]) => {
+        setRanking(res);
+      }
+    );
   };
 
   useEffect(() => {
-    updateRanking(criteria);
-  }, [criteria]);
+    updateRanking(criteria, generationStatus);
+  }, [criteria, generationStatus]);
 
   return (
     <MainContent>
       <RankingCriteriaListContainer>
+        <RankingKindOfGeneration
+          onClickEvent={onClickGeneration}
+          selected={generationStatus}
+        />
         <RankingCriteriaList
           onClickEvent={onClickCriteria}
           selected={criteria}
         />
+        <RankingCriteriaListRightLine />
       </RankingCriteriaListContainer>
       <RankingContent>
         <RankingTable>
