@@ -1,4 +1,6 @@
-# GRIG
+https://github.com/GRI-G/GRI-G.github.io 로 이동
+
+# ~~GRIG~~
 
 [![Update](https://github.com/sunrabbit123/GRIG/actions/workflows/main.yml/badge.svg)](https://github.com/sunrabbit123/GRIG/actions/workflows/main.yml)
 > https://sunrabbit123.github.io/GRIG/
